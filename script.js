@@ -1,34 +1,32 @@
+let distance = Infinity;
+let value = -3;
+
 function threeSum(arr, target) {
   //your code here
-  let distance = -1;
-  let value = -1;
-  let k1 = true;
-
+  // arr.sort
   for (let i = 0; i < arr.length - 2; i++) {
-    let sum = arr[i] + arr[i + 1] + arr[i + 2];
-    let dis = -1;
-    if (sum > target) {
-      dis = sum - target;
-      if (k1) {
-        k1 = false;
-        value = sum;
-        distance = dis;
-      }
-    } else {
-      dis = target - sum;
-      if (k1) {
-        k1 = false;
-        value = sum;
-        distance = dis;
+    for (let j = i + 1; j < arr.length - 1; j++) {
+      for (let k = j + 1; k < arr.length; k++) {
+        fun2(i, j, k, target, arr);
       }
     }
-
-    if (dis < distance) value = sum;
   }
   return value;
 }
 
-// let a = [-1, 2, 1, -4, 7];
+let fun2 = (i, j, k, target, arr) => {
+  let sum = arr[i] + arr[j] + arr[k];
+  let dis = -1;
+  if (sum > target) dis = sum - target;
+  else dis = target - sum;
+
+  if (dis < distance) {
+    value = sum;
+    distance = dis;
+  }
+};
+
+// let a = [-1, 2, 1, 4];
 // console.log(threeSum(a, 1));
 
 module.exports = threeSum;
