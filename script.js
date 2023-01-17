@@ -1,5 +1,5 @@
 let distance = Infinity;
-let value = -3;
+let value = Infinity;
 
 function threeSum(arr, target) {
   //your code here
@@ -20,8 +20,8 @@ let fun2 = (i, j, k, target, arr) => {
   if (sum > target) dis = sum - target;
   else dis = target - sum;
 
-  if (dis < distance) {
-    value = sum;
+  if (dis <= distance) {
+    if (value > sum) value = sum;
     distance = dis;
   }
 };
