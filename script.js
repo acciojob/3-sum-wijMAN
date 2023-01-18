@@ -20,7 +20,8 @@ function threeSum(arr, target) {
       }
       //now keep the serch of smaller distance continue
       if (currentSum > target) r--;
-      else l++;
+      else if (target > currentSum) l++;
+      else return currentSum;
     }
   }
 
