@@ -1,6 +1,6 @@
 function threeSum(arr, target) {
   //applying binary search  algo after sorting
-  "use strict";
+  // "use strict";
   let currentSum = Infinity;
   let currentDistance = Infinity - target;
   arr.sort((x, y) => {
