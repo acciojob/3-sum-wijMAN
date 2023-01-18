@@ -13,6 +13,7 @@ function threeSum(arr, target) {
 
     while (l < r) {
       let calculatedSum = arr[i] + arr[l] + arr[r];
+      let calculatedDistance = Math.abs(calculatedSum - target);
       if (calculatedDistance < currentDistance) {
         currentDistance = calculatedDistance;
         currentSum = calculatedSum;
